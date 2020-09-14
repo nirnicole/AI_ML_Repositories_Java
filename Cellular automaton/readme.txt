@@ -2,4 +2,4 @@ A cellular automaton is a discrete model of computation studied in automata theo
 
 in this folder you can see Conoway's Game Of Life impplemented as a cellular automaton.
 
-![stack Overflow](https://github.com/nirnicole/AI_ML_Repositories_Java/blob/master/Cellular%20automaton/Screenshot.png)
+![stack Overflow](https://raw.githubusercontent.com/nirnicole/AI_ML_Repositories_Java/master/Cellular%20automaton/Screenshot.png)
