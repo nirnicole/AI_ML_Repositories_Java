@@ -5,3 +5,4 @@ in this folder you can see Conoway's Game Of Life impplemented as a cellular aut
 
 ![GitHub Logo]()
 Format: ![Alt Text](url)
+![alt text](http://url/to/img.png)
