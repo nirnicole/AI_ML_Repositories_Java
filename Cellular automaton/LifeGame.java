@@ -29,7 +29,8 @@ public class LifeGame {
 	public static void main(String[] args) throws InterruptedException {
 
 		//create automata
-		final int LINES = 100, COLUMNS = 100, DELAY=220, SIZE=800;
+		final int LINES = 100, COLUMNS = 100, DELAY=150, SIZE=800;
+		final boolean SHOW_BORN_DIE=true;
 		LifeSitesGrid lifeGameGrid  = new LifeSitesGrid(LINES,COLUMNS,SIZE);
 		LifeSitesMatrix lifeMatrix = new LifeSitesMatrix(LINES,COLUMNS);
 		
@@ -40,13 +41,13 @@ public class LifeGame {
 		
 		while(true)
 		{	//setting the grid cells color according to living cells on life sites matrix.
-			lifeGameGrid.paintGrid(lifeMatrix, Color.DARK_GRAY, Color.WHITE);
+			lifeGameGrid.paintGrid(lifeMatrix);
 			
 			//implement automata rules
 			lifeMatrix.checkSitseArea();
 			
 			//generate next automata generation
-			lifeMatrix.nextGenaration();
+			lifeMatrix.nextGenaration(SHOW_BORN_DIE);
 			
 			//delay for clear view
 			TimeUnit.MILLISECONDS.sleep(DELAY);
