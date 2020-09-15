@@ -83,6 +83,7 @@ public class LifeSitesMatrix {
 								this.setCellColor(line, column, Color.red);
 							else
 								this.setCellColor(line, column, Color.WHITE);
+							//HERE YOU CAN ADD OTHER STUFF THAT HAPPENS  WHEN A CELL DIE..
 							}
 
 						else
@@ -93,6 +94,7 @@ public class LifeSitesMatrix {
 								this.setCellColor(line, column, Color.blue);
 							else
 								this.setCellColor(line, column, Color.DARK_GRAY);
+							//HERE YOU CAN ADD OTHER STUFF THAT HAPPENS  WHEN A CELL BORN..
 							}
 							}
 					else {
