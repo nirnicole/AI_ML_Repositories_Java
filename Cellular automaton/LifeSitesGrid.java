@@ -1,6 +1,5 @@
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-
 import java.awt.Color;
 import java.awt.GridLayout;
 
@@ -28,14 +27,11 @@ public class LifeSitesGrid extends JFrame {
 				}
 	}
 
-	public void paintGrid(LifeSitesMatrix lifeMatrix, Color c1, Color c2) {
+	public void paintGrid(LifeSitesMatrix lifeMatrix) {
 		
 		for(int line=0; line<this.gridPanels.length; line++)
 			for(int column=0; column < this.gridPanels[line].length;column++)
-				if(lifeMatrix.getCellStatus(line, column))
-					this.gridPanels[line][column].setBackground(c1);
-				else 
-					this.gridPanels[line][column].setBackground(c2);
+				this.gridPanels[line][column].setBackground(lifeMatrix.getCellColor(line, column));
 		this.repaint();
 	}
 	
