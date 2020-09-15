@@ -29,8 +29,8 @@ public class LifeGame {
 	public static void main(String[] args) throws InterruptedException {
 
 		//create automata
-		final int LINES = 100, COLUMNS = 100, DELAY=220;
-		LifeSitesGrid lifeGameGrid  = new LifeSitesGrid(LINES,COLUMNS);
+		final int LINES = 100, COLUMNS = 100, DELAY=220, SIZE=800;
+		LifeSitesGrid lifeGameGrid  = new LifeSitesGrid(LINES,COLUMNS,SIZE);
 		LifeSitesMatrix lifeMatrix = new LifeSitesMatrix(LINES,COLUMNS);
 		
 		//initilize automata
