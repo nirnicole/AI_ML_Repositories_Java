@@ -68,13 +68,41 @@ public class LifeSitesMatrix {
 		}
 		
 		//create next generation
-		public void nextGenaration() {
+		public void nextGenaration(boolean showBornDie) {
 			
 			for(int line = 0 ; line<this.LifeMatrix.length ; line++ )
 				for(int column = 0 ; column<this.LifeMatrix[line].length ; column++ )
 				{
 					if(this.getCellUpdateStatus(line, column))
-							this.setCellStatus(line,column, !this.getCellStatus(line,column));
+							{
+						//if the cell is alive and needs to die, paint red!
+						if(this.getCellStatus(line, column))		
+							{
+							this.setCellStatus(line,column, false);
+							if(showBornDie)
+								this.setCellColor(line, column, Color.red);
+							else
+								this.setCellColor(line, column, Color.WHITE);
+							}
+
+						else
+							{
+							//if the cell is dead and needs to live, paint blue! yey!
+							this.setCellStatus(line, column, true);
+							if(showBornDie)
+								this.setCellColor(line, column, Color.blue);
+							else
+								this.setCellColor(line, column, Color.DARK_GRAY);
+							}
+							}
+					else {
+						//if cell needs no update, paint white if dead, dark grey if alive (:
+						if(this.getCellStatus(line, column))		
+							this.setCellColor(line, column, Color.DARK_GRAY);
+						else
+							this.setCellColor(line, column, Color.WHITE);
+					}
+					
 					this.setCellUpdateStatus(line, column, false);
 				}//if theirs an order waiting to update status, reverse the current status and initialize the update status.
 		}
@@ -87,12 +115,20 @@ public class LifeSitesMatrix {
 			return this.LifeMatrix[line][column].getUpdateStatus();
 		}
 		
+		public Color getCellColor(int line, int column) {
+			return this.LifeMatrix[line][column].getCellColor();
+		}
+		
 		public void setCellStatus(int line, int column, boolean status) {
 			this.LifeMatrix[line][column].setSiteStatus(status);
 		}
 		
 		public void setCellUpdateStatus(int line, int column, boolean status) {
 			this.LifeMatrix[line][column].setUpdateStatus(status);
+		}
+		
+		public void setCellColor(int line, int column, Color c) {
+			this.LifeMatrix[line][column].setCellColor(c);;
 		}
 		
 		private boolean getRandomBoolean() {
