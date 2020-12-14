@@ -1,3 +1,6 @@
+the files have been removed temporarly due to final exam on school that may be copied from here.
+it will be reuploaded on march 2021.
+
 			this is an MVC design pattern:
  					M = Automaton.java
  					V = AutomatonGUI.java
